@@ -79,6 +79,9 @@
       return parts.join('+');
     }
 
+    const MOD = navigator.platform.includes('Mac') ? 'Cmd' : 'Ctrl';
+    const pretty = (accelerator) => accelerator.replace('CommandOrControl', MOD);
+
     const rows = document.getElementById('rows');
     const errorEl = document.getElementById('error');
     let shortcuts = {};
@@ -93,7 +96,7 @@
         name.textContent = label;
         const btn = document.createElement('button');
         btn.className = 'key';
-        btn.textContent = shortcuts[action];
+        btn.textContent = pretty(shortcuts[action]);
         btn.addEventListener('click', () => {
           stopCapture();
           capturing = { action, btn };

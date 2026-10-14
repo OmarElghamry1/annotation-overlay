@@ -1063,7 +1063,7 @@
     function applyShortcuts(map) {
       shortcuts = map;
       for (const [action, [id, label]] of Object.entries(tooltipTargets)) {
-        const shown = map[action].replace('CommandOrControl', 'Cmd/Ctrl');
+        const shown = map[action].replace('CommandOrControl', navigator.platform.includes('Mac') ? 'Cmd' : 'Ctrl');
         document.getElementById(id).title = `${label} (${shown})`;
       }
     }

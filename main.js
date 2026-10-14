@@ -246,7 +246,7 @@ function openPreferences() {
   }
   prefsWin = new BrowserWindow({
     width: 460,
-    height: 640,
+    height: 760,
     title: 'Customize Shortcuts',
     minimizable: false,
     maximizable: false,
